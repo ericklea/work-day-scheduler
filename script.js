@@ -17,6 +17,7 @@ $(function () {
 
   //Current time variable//
   var currentTime = dayjs().format('H');
+  $('#hour').text(currentTime);
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
