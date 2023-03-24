@@ -18,7 +18,7 @@ $(document).ready(function () {
   // current hour in 24-hour time?
 
   //Current time variable
- var currentHour = dayjs().hour();
+var currentHour = dayjs().hour();
 console.log(currentHour)
 //need an onclick event to set the local storage, so when save button is clicked it saves to local storage
 
