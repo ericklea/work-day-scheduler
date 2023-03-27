@@ -22,6 +22,12 @@ var currentHour = dayjs().hour();
 console.log(currentHour)
 //need an onclick event to set the local storage, so when save button is clicked it saves to local storage
 
+var saveButtonEl = $('.saveBtn');
+saveButtonEl.on('click', function ()) {
+
+}
+
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
@@ -40,7 +46,15 @@ function colorChange() {
     console.log(blockHour)
     if (blockHour < currentHour){
       $(this).addClass('past')
-    }//else if, the block hour is equal to the current hour then we need to remove the past class and add the class of present
+    } else if (blockHour = currentHour) {
+      $(this).removeClass('past')
+      $(this).addClass('present')
+    } else if (blockHour > currentHour) {
+      $(this).removeClass('past')
+      $(this).removeClass('present')
+      $(this).addClass('future')
+    }
+     //else if, the block hour is equal to the current hour then we need to remove the past class and add the class of present
     //else remove the class past remove class present remove class future
     
 
