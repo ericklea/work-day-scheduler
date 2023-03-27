@@ -22,16 +22,22 @@ $(document).ready(function () {
 
 
 
-
+var storage = Jason.parse(localStorage.getItem ('saveCal')) || []
   //Current time variable
-var currentHour = dayjs().hour();
-  console.log(currentHour)
+  var currentHour = dayjs().format('HH');
+  // male loop that loops over each time-block and sets its .value to storage [i]
+
   //need an onclick event to set the local storage, so when save button is clicked it saves to local storage
 
   var saveButtonEl = $('.saveBtn');
-saveButtonEl.on('click', function ()) {
+  saveButtonEl.on('click', function ()) {
 
+    storage = []
 
+    $('.time-block').each(function()) {
+      var thisNote = $(this)[0].children[1].value
+      storage.push(thisNote)
+    }
 
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
@@ -68,12 +74,12 @@ saveButtonEl.on('click', function ()) {
 
       })
 
-    }
+    
 
     colorChange()
 
     //use jquery selectors to get the save data from local storage
 
-    //
-  })
+  }
+  
 });
