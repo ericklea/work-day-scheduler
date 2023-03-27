@@ -11,11 +11,7 @@ $(document).ready(function () {
   // useful when saving the description in local storage?
   //
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+  
 
   //Current time variable
 var currentHour = dayjs().hour();
@@ -56,6 +52,12 @@ function colorChange() {
     }
      //else if, the block hour is equal to the current hour then we need to remove the past class and add the class of present
     //else remove the class past remove class present remove class future
+
+    // TODO: Add code to apply the past, present, or future class to each time
+  // block by comparing the id to the current hour. HINTS: How can the id
+  // attribute of each time-block be used to conditionally add or remove the
+  // past, present, and future classes? How can Day.js be used to get the
+  // current hour in 24-hour time?
     
 
   })
