@@ -1,5 +1,14 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 
+var hour9El = $('#hour-9');
+var hour10El = $('#hour-10');
+var hour11El = $('#hour-11');
+var hour12El = $('hour-12');
+var hour1El = $('hour-1');
+var hour2El = $('hour-2');
+var hour3El = $('hour-3');
+var hour4El = $('hour-4');
+var hour5El = $('hour-5');
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(document).ready(function () {
@@ -10,6 +19,7 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
+
 
   
 
@@ -27,9 +37,9 @@ saveButtonEl.on('click', function ()) {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
 
+  
+// TODO: Add code to display the current date in the header of the page.
 //Variable to display current date
 var day = dayjs().format('MMM DD, YYYY');
 $('#currentDay').text(day);   
