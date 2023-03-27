@@ -21,62 +21,59 @@ $(document).ready(function () {
   //
 
 
-  
+
 
   //Current time variable
 var currentHour = dayjs().hour();
-console.log(currentHour)
-//need an onclick event to set the local storage, so when save button is clicked it saves to local storage
+  console.log(currentHour)
+  //need an onclick event to set the local storage, so when save button is clicked it saves to local storage
 
-var saveButtonEl = $('.saveBtn');
+  var saveButtonEl = $('.saveBtn');
 saveButtonEl.on('click', function ()) {
 
-}
 
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-
-  
-// TODO: Add code to display the current date in the header of the page.
-//Variable to display current date
-var day = dayjs().format('MMM DD, YYYY');
-$('#currentDay').text(day);   
+    // TODO: Add code to get any user input that was saved in localStorage and set
+    // the values of the corresponding textarea elements. HINT: How can the id
+    // attribute of each time-block be used to do this?
 
 
-function colorChange() {
-  $('.time-block').each(function(){
-  
-    var blockHour = parseInt($(this).attr('id').split('-')[1])
-    console.log(blockHour)
-    if (blockHour < currentHour){
-      $(this).addClass('past')
-    } else if (blockHour = currentHour) {
-      $(this).removeClass('past')
-      $(this).addClass('present')
-    } else if (blockHour > currentHour) {
-      $(this).removeClass('past')
-      $(this).removeClass('present')
-      $(this).addClass('future')
+    // TODO: Add code to display the current date in the header of the page.
+    //Variable to display current date
+    var day = dayjs().format('MMM DD, YYYY');
+    $('#currentDay').text(day);
+
+
+    function colorChange() {
+      $('.time-block').each(function () {
+
+        var blockHour = parseInt($(this).attr('id').split('-')[1])
+        console.log(blockHour)
+        if (blockHour < currentHour) {
+          $(this).addClass('past')
+        } else if (blockHour == currentHour) {
+          $(this).addClass('present')
+        } else if (blockHour > currentHour) {
+          $(this).addClass('future')
+        }
+        //else if, the block hour is equal to the current hour then we need to remove the past class and add the class of present
+        //else remove the class past remove class present remove class future
+
+        // TODO: Add code to apply the past, present, or future class to each time
+        // block by comparing the id to the current hour. HINTS: How can the id
+        // attribute of each time-block be used to conditionally add or remove the
+        // past, present, and future classes? How can Day.js be used to get the
+        // current hour in 24-hour time?
+
+
+      })
+
     }
-     //else if, the block hour is equal to the current hour then we need to remove the past class and add the class of present
-    //else remove the class past remove class present remove class future
 
-    // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-    
+    colorChange()
 
+    //use jquery selectors to get the save data from local storage
+
+    //
   })
-
-}
-
-colorChange()
-
-//use jquery selectors to get the save data from local storage
-
-//
 });
