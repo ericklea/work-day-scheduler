@@ -5,11 +5,29 @@ $(document).ready(function () {
    //local storage
   var storage = JSON.parse(localStorage.getItem('saveCal')) || []
 
+  
+  
+  function updateTime() {
   var currentHour = dayjs().format('HH');
   console.log(currentHour)
-  function updateTime() {
-
+  $('.time-block').each(function () {
+  //function to set color to coincide with the time
+    var blockHour = parseInt($(this).attr('id').split('-')[1])
+    console.log(blockHour)
+    if (blockHour < currentHour) {
+      $(this).addClass('past')
+    } else if (blockHour == currentHour) {
+      $(this).removeClass('past')
+      $(this).addClass('present')
+    } else {
+      $(this).removeClass('past')
+      $(this).removeClass('present')
+      $(this).addClass('future')
+    }
+  })
   }
+  updateTime();
+  setInterval(updateTime, 10000)
   //onclick event to set the local storage
   var saveButtonEl = $('.saveBtn');
   saveButtonEl.on('click', function () {
@@ -36,28 +54,4 @@ $(document).ready(function () {
   $('#hour-16 .description').val(localStorage.getItem('hour-16'))
   $('#hour-17 .description').val(localStorage.getItem('hour-17'))
 
-
-  //function to set color to coincide with the time
-  function colorChange() {
-    $('.time-block').each(function () {
-
-      var blockHour = parseInt($(this).attr('id').split('-')[1])
-      console.log(blockHour)
-      if (blockHour < currentHour) {
-        $(this).addClass('past')
-      } else if (blockHour == currentHour) {
-        $(this).removeClass('past')
-        $(this).addClass('present')
-      } else {
-        $(this).removeClass('past')
-        $(this).removeClass('present')
-        $(this).addClass('future')
-      }
-
-
-
-    })
-
-  }
-  colorChange()
 });
