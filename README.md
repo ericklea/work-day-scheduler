@@ -17,10 +17,10 @@ Next, you will notice there are timeblocks for working hours from 9:00am until 5
 By clicking on the space next to the timeblock, you are able to input text. Keep in mind, gray space indicates past time, red space indicates present time, and green space indicates future time.
 ![image of application with text input]()
 After you have input the correct information for yourself in the scheduler, you are able to save your inputs by click the save button. 
-![image of application with save button] ()
+![image of application with save button]()
 Once you click save, your inputs are save to local storage. 
 
 #Credits
-For this project, I utilized html, css, and javascript starter code provided by The University of Utah Coding Bootcamp. Additionally, I utilized resources from https://youtube.com https://w3schools.com https://stakeoverflow.com and as well, I received help on building this application from University of Utah Coding Bootcamp tutor Ben Martin and TA Brandon Ashby.
+For this project, I utilized html, css, and javascript starter code provided by The University of Utah Coding Bootcamp. Additionally, I utilized resources from https://youtube.com https://w3schools.com https://stakeoverflow.com and as well, I received help on building this application from University of Utah Coding Bootcamp tutor Ben Martin and TA Brandon Ashby and TA Ben Bushman.
 
 
