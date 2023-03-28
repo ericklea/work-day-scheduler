@@ -15,8 +15,10 @@ Once you are on the application page, you will notice the header, reading "Workd
 Next, you will notice there are timeblocks for working hours from 9:00am until 5:00pm.
 By clicking on the space next to the timeblock, you are able to input text. Keep in mind, gray space indicates past time, red space indicates present time, and green space indicates future time.
 ![image of application with text input](Assets/app.jpeg)
+
 After you have input the correct information for yourself in the scheduler, you are able to save your inputs by click the save button. 
-![image of application with save button]()
+
+![image of application with save button](Assets/storage.jpeg)
 Once you click save, your inputs are save to local storage. 
 
 #Credits
