@@ -22,6 +22,7 @@ $(document).ready(function () {
 
   }
   //onclick event to set the local storage
+  var saveButtonEl = $('.saveBtn');
   saveButtonEl.on('click', function () {
     var value = $(this).siblings('.description').val()
     var hour = $(this).parent().attr('id')
@@ -29,6 +30,8 @@ $(document).ready(function () {
     localStorage.setItem(hour, value)
 
   })
+
+  localStorage.setItem('saveCal', JSON.stringify (storage));
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
