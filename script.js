@@ -6,7 +6,7 @@ $(document).ready(function () {
   var storage = JSON.parse(localStorage.getItem('saveCal')) || []
 
   
-  
+  //function to set time
   function updateTime() {
   var currentHour = dayjs().format('HH');
   console.log(currentHour)
