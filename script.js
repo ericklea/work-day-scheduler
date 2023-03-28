@@ -4,11 +4,11 @@ var hour9El = $('#hour-9');
 var hour10El = $('#hour-10');
 var hour11El = $('#hour-11');
 var hour12El = $('hour-12');
-var hour1El = $('hour-1');
-var hour2El = $('hour-2');
-var hour3El = $('hour-3');
-var hour4El = $('hour-4');
-var hour5El = $('hour-5');
+var hour1El = $('hour-13');
+var hour2El = $('hour-14');
+var hour3El = $('hour-15');
+var hour4El = $('hour-16');
+var hour5El = $('hour-17');
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(document).ready(function () {
@@ -22,23 +22,25 @@ $(document).ready(function () {
 
 
 
-var storage = Jason.parse(localStorage.getItem ('saveCal')) || []
+var storage = JSON.parse(localStorage.getItem ('saveCal')) || []
   //Current time variable
   var currentHour = dayjs().format('HH');
-  // male loop that loops over each time-block and sets its .value to storage [i]
+  console.log(currentHour)
+  function updateTime(){
+
+  }
+  // make loop that loops over each time-block and sets its .value to storage [i]
 
   //need an onclick event to set the local storage, so when save button is clicked it saves to local storage
 
   var saveButtonEl = $('.saveBtn');
-  saveButtonEl.on('click', function ()) {
+  saveButtonEl.on('click', function () {
+    var value = $(this).siblings('.description').val()
+    var hour = $(this).parent().attr('id')
+    console.log(hour)
+    localStorage.setItem(hour, value)
 
-    storage = []
-
-    $('.time-block').each(function()) {
-      var thisNote = $(this)[0].children[1].value
-      storage.push(thisNote)
-    }
-
+  })
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
@@ -48,6 +50,16 @@ var storage = Jason.parse(localStorage.getItem ('saveCal')) || []
     //Variable to display current date
     var day = dayjs().format('MMM DD, YYYY');
     $('#currentDay').text(day);
+    $('#hour-9 .description').val(localStorage.getItem('hour-9'))
+    $('#hour-10 .description').val(localStorage.getItem('hour-10'))
+    $('#hour-11 .description').val(localStorage.getItem('hour-11'))
+    $('#hour-12 .description').val(localStorage.getItem('hour-12'))
+    $('#hour-13 .description').val(localStorage.getItem('hour-13'))
+    $('#hour-14 .description').val(localStorage.getItem('hour-14'))
+    $('#hour-15 .description').val(localStorage.getItem('hour-15'))
+    $('#hour-16 .description').val(localStorage.getItem('hour-16'))
+    $('#hour-17 .description').val(localStorage.getItem('hour-17'))
+
 
 
     function colorChange() {
@@ -58,8 +70,11 @@ var storage = Jason.parse(localStorage.getItem ('saveCal')) || []
         if (blockHour < currentHour) {
           $(this).addClass('past')
         } else if (blockHour == currentHour) {
+          $(this).removeClass('past')
           $(this).addClass('present')
-        } else if (blockHour > currentHour) {
+        } else {
+          $(this).removeClass('past')
+          $(this).removeClass('present')
           $(this).addClass('future')
         }
         //else if, the block hour is equal to the current hour then we need to remove the past class and add the class of present
@@ -76,10 +91,10 @@ var storage = Jason.parse(localStorage.getItem ('saveCal')) || []
 
     
 
-    colorChange()
+    
 
     //use jquery selectors to get the save data from local storage
 
   }
-  
+  colorChange()
 });
