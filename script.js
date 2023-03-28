@@ -11,7 +11,7 @@ $(document).ready(function () {
   // useful when saving the description in local storage?
   //
 
- 
+
 
   //local storage
   var storage = JSON.parse(localStorage.getItem('saveCal')) || []
@@ -25,7 +25,7 @@ $(document).ready(function () {
   saveButtonEl.on('click', function () {
     var value = $(this).siblings('.description').val()
     var hour = $(this).parent().attr('id')
-    console.log(hour)
+    
     localStorage.setItem(hour, value)
 
   })
@@ -34,11 +34,10 @@ $(document).ready(function () {
   // attribute of each time-block be used to do this?
 
 
-  // TODO: Add code to display the current date in the header of the page.
-  //Variable to display current date
- //displays current day
- var day = dayjs().format('MMM DD, YYYY');
- $('#currentDay').text(day);
+  
+  //displays current day
+  var day = dayjs().format('MMM DD, YYYY');
+  $('#currentDay').text(day);
   $('#hour-9 .description').val(localStorage.getItem('hour-9'))
   $('#hour-10 .description').val(localStorage.getItem('hour-10'))
   $('#hour-11 .description').val(localStorage.getItem('hour-11'))
