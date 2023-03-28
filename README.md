@@ -13,9 +13,8 @@ To run this application, install VSCode to load the html, css, and javascript fi
 To use this application follow this link https://.ericklea.github.io/work-day-scheduler/
 Once you are on the application page, you will notice the header, reading "Workday Scheduler" as well as the current date. 
 Next, you will notice there are timeblocks for working hours from 9:00am until 5:00pm.
-![image of application without text input]()
 By clicking on the space next to the timeblock, you are able to input text. Keep in mind, gray space indicates past time, red space indicates present time, and green space indicates future time.
-![image of application with text input]()
+![image of application with text input](Assets/app.jpeg)
 After you have input the correct information for yourself in the scheduler, you are able to save your inputs by click the save button. 
 ![image of application with save button]()
 Once you click save, your inputs are save to local storage. 
